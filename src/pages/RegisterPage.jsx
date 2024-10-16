@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import logo from "../assets/logo.png"
+import { NavLink } from 'react-router-dom'
 const RegisterPage = () => {
     const [username, setUsername] = useState('')
     const [passcode, setPasscode] = useState('')
@@ -14,15 +15,16 @@ const RegisterPage = () => {
     return (
       <div className="min-h-screen bg-white p-6 flex flex-col items-center justify-center">
         <div className="w-full max-w-md">
-          <div className="mb-8 flex justify-center">
-            <img
-              src={logo}
-              alt="Safe Haven Logo"
-              width={80}
-              height={40}
-              className="h-10 w-auto"
-            />
-          </div>
+        <div className="flex items-center justify-center mb-8">
+          <img
+            src={logo}
+            alt="Safe Haven Logo"
+            width={80}
+            height={40}
+            className="h-10 w-auto"
+          />
+          <span className="text-[#DE5BA7] font-semibold">Safe Haven</span>
+        </div>
           
           <h1 className="text-2xl font-bold text-center mb-2">Create an account</h1>
           <p className="text-center text-gray-600 mb-6">
@@ -76,14 +78,14 @@ const RegisterPage = () => {
             
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full bg-custom-blue py-3 rounded-full font-medium hover:bg-[#3D69CC] transition duration-200 text-white"
             >
               Create account
             </button>
           </form>
           
           <p className="mt-4 text-center text-sm text-gray-600">
-            Already have an anonymous account? <a href="#" className="text-blue-500 hover:underline">Login</a>.
+            Already have an anonymous account? <NavLink to="/login"    className="text-custom-pink font-medium hover:underline transition duration-200">Login</NavLink>
           </p>
         </div>
       </div>
